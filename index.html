@@ -1,161 +1,102 @@
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KK AQUARIUM FISH</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
 
-<link rel="stylesheet" href="style.css">
-</head>
+body{
+background:linear-gradient(135deg,#d7f8ff,#e8f9ff,#b8ecff);
+}
 
-<body>
+header{
+background:#0077b6;
+color:white;
+padding:20px;
+text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,.2);
+}
 
-<header>
-    <h1>🐠 KK AQUARIUM FISH</h1>
-    <p>Godavarikhani | Telangana</p>
+#search{
+width:90%;
+max-width:500px;
+padding:12px;
+border:none;
+border-radius:30px;
+margin-top:15px;
+font-size:16px;
+}
 
-    <input
-    type="text"
-    id="search"
-    placeholder="Search Fish..."
-    onkeyup="searchFish()">
+.shipping{
+background:#00b894;
+color:white;
+padding:12px;
+text-align:center;
+font-weight:bold;
+}
 
-</header>
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:25px;
+}
 
-<div class="shipping">
-🚚 ONLY TELANGANA SHIPPING
-</div>
+.card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+transition:.3s;
+text-align:center;
+padding-bottom:20px;
+}
 
-<section class="products">
+.card:hover{
+transform:translateY(-8px);
+}
 
-<div class="card">
-<h2>Oranda Gold Fish</h2>
-<h3>Price : Contact</h3>
-<button onclick="order('Oranda Gold Fish')">Order Now</button>
-</div>
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
 
-<div class="card">
-<h2>Alligator Gar</h2>
-<h3>₹1500</h3>
-<button onclick="order('Alligator Gar')">Order Now</button>
-</div>
+.card h2{
+color:#0077b6;
+margin:10px;
+}
 
-<div class="card">
-<h2>Arowana</h2>
-<h3>₹1800</h3>
-<button onclick="order('Arowana')">Order Now</button>
-</div>
+.card h3{
+color:green;
+margin-bottom:15px;
+}
 
-<div class="card">
-<h2>Flowerhorn</h2>
-<h3>₹1800</h3>
-<button onclick="order('Flowerhorn')">Order Now</button>
-</div>
+button{
+background:#25D366;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+}
 
-<div class="card">
-<h2>Mollies</h2>
-<h3>₹40</h3>
-<button onclick="order('Mollies')">Order Now</button>
-</div>
+button:hover{
+background:#128C7E;
+}
 
-<div class="card">
-<h2>Guppies</h2>
-<h3>₹60</h3>
-<button onclick="order('Guppies')">Order Now</button>
-</div>
-
-<div class="card">
-<h2>Betta</h2>
-<h3>₹180</h3>
-<button onclick="order('Betta')">Order Now</button>
-</div>
-
-<div class="card">
-<h2>Panda Mollies</h2>
-<h3>₹60</h3>
-<button onclick="order('Panda Mollies')">Order Now</button>
-</div>
-
-<div class="card">
-<h2>Copper Oscar</h2>
-<h3>₹700</h3>
-<button onclick="order('Copper Oscar')">Order Now</button>
-</div>
-
-<div class="card">
-<h2>Gold Fish</h2>
-<h3>₹60</h3>
-<button onclick="order('Gold Fish')">Order Now</button>
-</div>
-
-<div class="card">
-<h2>Koi</h2>
-<h3>₹350</h3>
-<button onclick="order('Koi')">Order Now</button>
-</div>
-
-<div class="card">
-<h2>Cichlids</h2>
-<h3>₹300</h3>
-<button onclick="order('Cichlids')">Order Now</button>
-</div>
-
-<div class="card">
-<h2>Angel Fish</h2>
-<h3>₹180</h3>
-<button onclick="order('Angel Fish')">Order Now</button>
-</div>
-
-<div class="card">
-<h2>Sharks</h2>
-<h3>₹80</h3>
-<button onclick="order('Sharks')">Order Now</button>
-</div>
-
-<div class="card">
-<h2>Channa</h2>
-<h3>₹1000</h3>
-<button onclick="order('Channa')">Order Now</button>
-</div>
-
-<div class="card">
-<h2>Zebra Fish</h2>
-<h3>₹40</h3>
-<button onclick="order('Zebra Fish')">Order Now</button>
-</div>
-
-<div class="card">
-<h2>Small Flowerhorn</h2>
-<h3>₹600</h3>
-<button onclick="order('Small Flowerhorn')">Order Now</button>
-</div>
-
-<div class="card">
-<h2>Small Koi</h2>
-<h3>₹180</h3>
-<button onclick="order('Small Koi')">Order Now</button>
-</div>
-
-</section>
-
-<footer>
-
-<h2>📍 KK AQUARIUM FISH</h2>
-
-<p>
-Markendya Colony,<br>
-Opposite Subham Hotel,<br>
-Godavarikhani, Telangana
-</p>
-
-<p>📞 7036010302</p>
-<p>📞 7075519854</p>
-
-</footer>
-
-<script src="script.js"></script>
-
-</body>
-</html>
+footer{
+background:#023047;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:30px;
+}
+</style>
 ```
+
+
+

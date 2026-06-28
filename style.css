@@ -1,0 +1,135 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KK AQUARIUM FISH</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+body{
+background:#f1f3f6;
+}
+header{
+background:#2874f0;
+color:white;
+padding:20px;
+text-align:center;
+}
+#search{
+width:90%;
+max-width:500px;
+padding:12px;
+margin-top:15px;
+border:none;
+border-radius:6px;
+}
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:20px;
+}
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 2px 10px rgba(0,0,0,.15);
+text-align:center;
+}
+.price{
+color:green;
+font-size:22px;
+font-weight:bold;
+margin:10px 0;
+}
+button{
+width:100%;
+padding:12px;
+background:#25D366;
+color:white;
+border:none;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+}
+button:hover{
+background:#128C7E;
+}
+footer{
+background:#172337;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:30px;
+}
+</style>
+
+<script>
+function order(fish){
+window.open(
+"https://wa.me/917036010302?text="+encodeURIComponent("Hello KK AQUARIUM FISH, I want to order "+fish),
+"_blank");
+}
+
+function searchFish(){
+let input=document.getElementById("search").value.toLowerCase();
+let cards=document.getElementsByClassName("card");
+
+for(let i=0;i<cards.length;i++){
+let name=cards[i].getElementsByTagName("h2")[0].innerText.toLowerCase();
+cards[i].style.display=name.includes(input)?"block":"none";
+}
+}
+</script>
+
+</head>
+<body>
+
+<header>
+<h1>🐠 KK AQUARIUM FISH</h1>
+<p>Godavarikhani | Telangana</p>
+
+<input id="search" type="text" placeholder="Search Fish..." onkeyup="searchFish()">
+</header>
+
+<div class="products">
+
+<div class="card">
+<h2>Arowana</h2>
+<p class="price">₹1800</p>
+<button onclick="order('Arowana')">Order Now</button>
+</div>
+
+<div class="card">
+<h2>Flowerhorn</h2>
+<p class="price">₹1800</p>
+<button onclick="order('Flowerhorn')">Order Now</button>
+</div>
+
+<div class="card">
+<h2>Alligator Gar</h2>
+<p class="price">₹1500</p>
+<button onclick="order('Alligator Gar')">Order Now</button>
+</div>
+
+</div>
+
+<footer>
+<h2>KK AQUARIUM FISH</h2>
+<p>📍 Markendya Colony, Opposite Subham Hotel, Godavarikhani, Telangana</p>
+<p>📞7036010302 | 7075519854</p>
+<p>🚚 Only Telangana Shipping</p>
+</footer>
+
+</body>
+</html>
+```
+
+  

@@ -1,102 +1,172 @@
-```css
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KK AQUARIUM FISH</title>
 
-body{
-    background:#f1f3f6;
-}
+<link rel="stylesheet" href="style.css">
+</head>
 
-header{
-    background:#2874f0;
-    color:white;
-    padding:20px;
-    text-align:center;
-    position:sticky;
-    top:0;
-    z-index:100;
-}
+<body>
 
-header h1{
-    font-size:32px;
-}
+<header>
+<h1>🐠 KK AQUARIUM FISH</h1>
+<p>Godavarikhani | Markendya Colony</p>
 
-#search{
-    width:90%;
-    max-width:500px;
-    margin-top:15px;
-    padding:12px;
-    border:none;
-    border-radius:6px;
-    font-size:16px;
-}
+<input
+type="text"
+id="search"
+placeholder="🔍 Search Fish..."
+onkeyup="searchFish()">
 
-.shipping{
-    background:#00a65a;
-    color:white;
-    text-align:center;
-    padding:12px;
-    font-weight:bold;
-}
+</header>
 
-.products{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-    gap:20px;
-    padding:20px;
-}
+<div class="shipping">
+🚚 ONLY TELANGANA SHIPPING
+</div>
 
-.card{
-    background:white;
-    border-radius:8px;
-    box-shadow:0 2px 10px rgba(0,0,0,.12);
-    padding:18px;
-    transition:.3s;
-    text-align:center;
-}
+<div class="products">
 
-.card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 8px 20px rgba(0,0,0,.2);
-}
+<div class="card">
+<h2>Oranda Gold Fish</h2>
+<p class="price">Contact</p>
+<button onclick="order('Oranda Gold Fish')">
+Order Now
+</button>
+</div>
 
-.card h2{
-    color:#2874f0;
-    margin-bottom:10px;
-}
+<div class="card">
+<h2>Alligator Gar</h2>
+<p class="price">₹1500</p>
+<button onclick="order('Alligator Gar')">
+Order Now
+</button>
+</div>
 
-.price{
-    color:#388e3c;
-    font-size:22px;
-    font-weight:bold;
-    margin:10px 0;
-}
+<div class="card">
+<h2>Arowana</h2>
+<p class="price">₹1800</p>
+<button onclick="order('Arowana')">
+Order Now
+</button>
+</div>
 
-button{
-    width:100%;
-    background:#fb641b;
-    color:white;
-    border:none;
-    padding:12px;
-    border-radius:5px;
-    font-size:16px;
-    cursor:pointer;
-    font-weight:bold;
-}
+<div class="card">
+<h2>Flowerhorn</h2>
+<p class="price">₹1800</p>
+<button onclick="order('Flowerhorn')">
+Order Now
+</button>
+</div>
 
-button:hover{
-    background:#e65c00;
-}
+<div class="card">
+<h2>Mollies</h2>
+<p class="price">₹40</p>
+<button onclick="order('Mollies')">
+Order Now
+</button>
+</div>
 
-footer{
-    background:#172337;
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:30px;
-}
+<div class="card">
+<h2>Guppies</h2>
+<p class="price">₹60</p>
+<button onclick="order('Guppies')">
+Order Now
+</button>
+</div>
+
+<div class="card">
+<h2>Betta</h2>
+<p class="price">₹180</p>
+<button onclick="order('Betta')">
+Order Now
+</button>
+</div>
+
+<div class="card">
+<h2>Panda Mollies</h2>
+<p class="price">₹60</p>
+<button onclick="order('Panda Mollies')">
+Order Now
+</button>
+</div>
+
+<div class="card">
+<h2>Copper Oscar</h2>
+<p class="price">₹700</p>
+<button onclick="order('Copper Oscar')">
+Order Now
+</button>
+</div>
 ```
+```html
+<div class="card">
+<h2>Gold Fish</h2>
+<p class="price">₹60</p>
+<button onclick="order('Gold Fish')">Order Now</button>
+</div>
 
+<div class="card">
+<h2>Koi</h2>
+<p class="price">₹350</p>
+<button onclick="order('Koi')">Order Now</button>
+</div>
+
+<div class="card">
+<h2>Cichlids</h2>
+<p class="price">₹300</p>
+<button onclick="order('Cichlids')">Order Now</button>
+</div>
+
+<div class="card">
+<h2>Angel Fish</h2>
+<p class="price">₹180</p>
+<button onclick="order('Angel Fish')">Order Now</button>
+</div>
+
+<div class="card">
+<h2>Sharks</h2>
+<p class="price">₹80</p>
+<button onclick="order('Sharks')">Order Now</button>
+</div>
+
+<div class="card">
+<h2>Channa</h2>
+<p class="price">₹1000</p>
+<button onclick="order('Channa')">Order Now</button>
+</div>
+
+<div class="card">
+<h2>Zebra Fish</h2>
+<p class="price">₹40</p>
+<button onclick="order('Zebra Fish')">Order Now</button>
+</div>
+
+<div class="card">
+<h2>Small Flowerhorn</h2>
+<p class="price">₹600</p>
+<button onclick="order('Small Flowerhorn')">Order Now</button>
+</div>
+
+<div class="card">
+<h2>Small Koi</h2>
+<p class="price">₹180</p>
+<button onclick="order('Small Koi')">Order Now</button>
+</div>
+
+</div>
+
+<footer>
+<h2>📍 KK AQUARIUM FISH</h2>
+<p>Markendya Colony, Opposite Subham Hotel, Godavarikhani, Telangana</p>
+<p>📞 7036010302 | 7075519854</p>
+<p>🚚 Only Telangana Shipping</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```

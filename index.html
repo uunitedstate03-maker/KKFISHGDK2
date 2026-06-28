@@ -1,208 +1,38 @@
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KK AQUARIUM FISH</title>
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-background:#f1f3f6;
-}
-
-header{
-background:#2874f0;
-padding:15px;
-position:sticky;
-top:0;
-z-index:100;
-box-shadow:0 2px 8px rgba(0,0,0,.2);
-}
-
-.logo{
-color:white;
-font-size:28px;
-font-weight:bold;
-text-align:center;
-}
-
-.search{
-width:100%;
-max-width:700px;
-display:block;
-margin:15px auto;
-padding:14px;
-border:none;
-border-radius:5px;
-font-size:17px;
-outline:none;
-}
-
-.banner{
-background:#00b894;
-color:white;
-text-align:center;
-padding:12px;
-font-size:18px;
-font-weight:bold;
-}
-
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:20px;
-padding:30px;
-}
-
-.card{
-background:white;
-border-radius:8px;
-padding:20px;
-box-shadow:0 2px 10px rgba(0,0,0,.12);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-.icon{
-font-size:70px;
-text-align:center;
-}
-
-.name{
-font-size:22px;
-font-weight:bold;
-margin:10px 0;
-}
-
-.price{
-color:green;
-font-size:22px;
-font-weight:bold;
-}
-
-button{
-width:100%;
-padding:12px;
-background:#fb641b;
-color:white;
-border:none;
-margin-top:15px;
-border-radius:5px;
-font-size:16px;
-cursor:pointer;
-}
-
-button:hover{
-background:#e65100;
-}
-
-footer{
-background:#172337;
-color:white;
-text-align:center;
-padding:25px;
-margin-top:40px;
-line-height:30px;
-}
-</style>
-
-</head>
-<body>
-
-<header>
-
-<div class="logo">🐠 KK AQUARIUM FISH</div>
-
-<input
-type="text"
-class="search"
-id="search"
-placeholder="Search Fish..."
-onkeyup="searchFish()">
-
-</header>
-
-<div class="banner">
-🚚 ONLY TELANGANA SHIPPING
-</div>
-
-<div class="products" id="products">
-
-<div class="card"><div class="icon">🐠</div><div class="name">Oranda Gold Fish</div><div class="price">Contact</div><button>Order Now</button></div>
-
-<div class="card"><div class="icon">🐟</div><div class="name">Alligator Gar</div><div class="price">₹1500</div><button>Order Now</button></div>
-
-<div class="card"><div class="icon">🐟</div><div class="name">Arowana</div><div class="price">₹1800</div><button>Order Now</button></div>
-
-<div class="card"><div class="icon">🐠</div><div class="name">Flowerhorn</div><div class="price">₹1800</div><button>Order Now</button></div>
-
-<div class="card"><div class="icon">🐠</div><div class="name">Mollies</div><div class="price">₹40</div><button>Order Now</button></div>
-
-<div class="card"><div class="icon">🐟</div><div class="name">Guppies</div><div class="price">₹60</div><button>Order Now</button></div>
-
-<div class="card"><div class="icon">🐠</div><div class="name">Betta</div><div class="price">₹180</div><button>Order Now</button></div>
-
-<div class="card"><div class="icon">🐟</div><div class="name">Panda Mollies</div><div class="price">₹60</div><button>Order Now</button></div>
-
-<div class="card"><div class="icon">🐠</div><div class="name">Copper Oscar</div><div class="price">₹700</div><button>Order Now</button></div>
-
-<div class="card"><div class="icon">🐟</div><div class="name">Gold Fish</div><div class="price">₹60</div><button>Order Now</button></div>
-
-<div class="card"><div class="icon">🐠</div><div class="name">Koi</div><div class="price">₹350</div><button>Order Now</button></div>
-
-<div class="card"><div class="icon">🐟</div><div class="name">Cichlids</div><div class="price">₹300</div><button>Order Now</button></div>
-
-<div class="card"><div class="icon">🐠</div><div class="name">Angel Fish</div><div class="price">₹180</div><button>Order Now</button></div>
-
-<div class="card"><div class="icon">🦈</div><div class="name">Shark Fish</div><div class="price">₹80</div><button>Order Now</button></div>
-
-<div class="card"><div class="icon">🐟</div><div class="name">Channa</div><div class="price">₹1000</div><button>Order Now</button></div>
-
-<div class="card"><div class="icon">🐠</div><div class="name">Zebra Fish</div><div class="price">₹40</div><button>Order Now</button></div>
-
-<div class="card"><div class="icon">🐠</div><div class="name">Small Flowerhorn</div><div class="price">₹600</div><button>Order Now</button></div>
-
-<div class="card"><div class="icon">🐟</div><div class="name">Small Koi</div><div class="price">₹180</div><button>Order Now</button></div>
-
-</div>
-
-<footer>
-
-<h2>KK AQUARIUM FISH</h2>
-
-📍 Markendya Colony, Opposite Subham Hotel,<br>
-Godavarikhani, Telangana
-
-<br><br>
-
-📞 7036010302<br>
-📞 7075519854
-
-</footer>
+<button onclick="orderFish('Arowana',1800)">Order Now</button>
 
 <script>
-function searchFish(){
-let input=document.getElementById("search").value.toLowerCase();
-let cards=document.getElementsByClassName("card");
+function orderFish(fishName, price) {
 
-for(let i=0;i<cards.length;i++){
-let name=cards[i].innerText.toLowerCase();
-cards[i].style.display=name.includes(input)?"block":"none";
-}
+    let customer = prompt("Enter your Name:");
+    if (!customer) return;
+
+    let quantity = prompt("Enter Quantity:");
+    if (!quantity) return;
+
+    let phone = "917036010302";
+
+    let message =
+`🐠 *KK AQUARIUM FISH ORDER*
+
+👤 Customer Name: ${customer}
+
+🐟 Fish: ${fishName}
+
+💰 Price: ₹${price}
+
+🔢 Quantity: ${quantity}
+
+💵 Total: ₹${price * quantity}
+
+📍 Shipping: Telangana
+
+Please confirm my order.`;
+
+    let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
 }
 </script>
-
-</body>
-</html>
 ```
+

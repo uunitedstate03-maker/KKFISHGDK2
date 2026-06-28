@@ -1,38 +1,10 @@
 ```html
-<button onclick="orderFish('Arowana',1800)">Order Now</button>
-
-<script>
-function orderFish(fishName, price) {
-
-    let customer = prompt("Enter your Name:");
-    if (!customer) return;
-
-    let quantity = prompt("Enter Quantity:");
-    if (!quantity) return;
-
-    let phone = "917036010302";
-
-    let message =
-`🐠 *KK AQUARIUM FISH ORDER*
-
-👤 Customer Name: ${customer}
-
-🐟 Fish: ${fishName}
-
-💰 Price: ₹${price}
-
-🔢 Quantity: ${quantity}
-
-💵 Total: ₹${price * quantity}
-
-📍 Shipping: Telangana
-
-Please confirm my order.`;
-
-    let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
-
-    window.open(url, "_blank");
-}
-</script>
+<button
+style="width:100%;padding:12px;background:#25D366;color:white;border:none;border-radius:5px;font-size:16px;cursor:pointer;"
+onclick="window.open('https://wa.me/917036010302?text=Hello%20KK%20AQUARIUM%20FISH,%20I%20want%20to%20order%20Arowana.','_blank')">
+Order Now
+</button>
 ```
+
+
 

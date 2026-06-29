@@ -1,30 +1,32 @@
 ```javascript
-function order(fishName) {
-    const phone = "917036010302";
-
-    const message =
-        "Hello KK AQUARIUM FISH,\n\n" +
-        "I want to order: " + fishName + ".\n\n" +
-        "Please tell me the availability.";
-
-    const url =
-        "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
-
-    window.open(url, "_blank");
-}
-
 function searchFish() {
-    let input = document.getElementById("search").value.toLowerCase();
-    let cards = document.getElementsByClassName("card");
+    const input = document.getElementById("search").value.toLowerCase();
+    const cards = document.querySelectorAll(".card");
 
-    for (let i = 0; i < cards.length; i++) {
-        let fish = cards[i].getElementsByTagName("h2")[0].innerText.toLowerCase();
+    cards.forEach(card => {
+        const fish = card.querySelector("h2").textContent.toLowerCase();
 
         if (fish.includes(input)) {
-            cards[i].style.display = "block";
+            card.style.display = "";
         } else {
-            cards[i].style.display = "none";
+            card.style.display = "none";
         }
-    }
+    });
+}
+```
+```javascript
+function searchFish() {
+    const input = document.getElementById("search").value.toLowerCase();
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        const fish = card.querySelector("h2").textContent.toLowerCase();
+
+        if (fish.includes(input)) {
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
+        }
+    });
 }
 ```

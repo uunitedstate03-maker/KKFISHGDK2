@@ -1,14 +1,150 @@
 ```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>KK AQUARIUM FISH</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#eef5ff;
+}
+
+header{
+background:#2874F0;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+position:sticky;
+top:0;
+z-index:999;
+box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+.logo{
+color:#fff;
+font-size:30px;
+font-weight:bold;
+}
+
+#search{
+width:330px;
+max-width:100%;
+padding:12px;
+border:none;
+border-radius:30px;
+font-size:16px;
+}
+
+.banner{
+background:#00C853;
+color:white;
+padding:12px;
+text-align:center;
+font-weight:bold;
+font-size:18px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+padding:20px;
+}
+
+.card{
+background:white;
+border-radius:15px;
+padding:20px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.badge{
+background:red;
+color:white;
+display:inline-block;
+padding:5px 10px;
+border-radius:20px;
+font-size:12px;
+margin-bottom:10px;
+}
+
+.fish{
+font-size:70px;
+}
+
+.rating{
+background:green;
+display:inline-block;
+padding:5px 12px;
+color:white;
+border-radius:20px;
+margin:10px 0;
+}
+
+.price{
+font-size:28px;
+font-weight:bold;
+color:#ff6600;
+margin:10px 0;
+}
+
+.old{
+text-decoration:line-through;
+color:gray;
+}
+
+.offer{
+color:green;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+.whatsapp{
+width:100%;
+padding:14px;
+border:none;
+border-radius:30px;
+background:#25D366;
+color:white;
+font-size:17px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.whatsapp:hover{
+background:#128C7E;
+}
+
+footer{
+background:#172337;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:40px;
+}
+
+</style>
 
 </head>
 
@@ -21,255 +157,303 @@
 </div>
 
 <input
-type="text"
 id="search"
+type="text"
 placeholder="🔍 Search Fish..."
 onkeyup="searchFish()">
 
 </header>
 
 <div class="banner">
+
 🚚 ONLY TELANGANA SHIPPING
+
 </div>
 
 <div class="products">
-
-<div class="card">
-
-<div class="fish">
-🐠
-</div>
-
-<h2>Oranda Gold Fish</h2>
-
-<p class="price">
-Contact
-</p>
-
-<button class="whatsapp"
-onclick="order('Oranda Gold Fish')">
-
-💬 Message
-
-</button>
-
-</div>
-
-<div class="card">
-
-<div class="fish">
-🐊
-</div>
-
-<h2>Alligator Gar</h2>
-
-<p class="price">
-₹1500
-</p>
-
-<button class="whatsapp"
-onclick="order('Alligator Gar')">
-
-💬 Message
-
-</button>
-
-</div>
-
-<div class="card">
-
-<div class="fish">
-🐟
-</div>
-
-<h2>Arowana</h2>
-
-<p class="price">
-₹1800
-</p>
-
-<button class="whatsapp"
-onclick="order('Arowana')">
-
-💬 Message
-
-</button>
-
-</div>
-
-<div class="card">
-
-<div class="fish">
-🐠
-</div>
-
-<h2>Flowerhorn</h2>
-
-<p class="price">
-₹1800
-</p>
-
-<button class="whatsapp"
-onclick="order('Flowerhorn')">
-
-💬 Message
-
-</button>
-
-</div>
-
-<div class="card">
-
-<div class="fish">
-🐠
-</div>
-
-<h2>Mollies</h2>
-
-<p class="price">
-₹40
-</p>
-
-<button class="whatsapp"
-onclick="order('Mollies')">
-
-💬 Message
-
-</button>
-
-</div>
-
-<div class="card">
-
-<div class="fish">
-🐠
-</div>
-
-<h2>Guppies</h2>
-
-<p class="price">
-₹60
-</p>
-
-<button class="whatsapp"
-onclick="order('Guppies')">
-
-💬 Message
-
-</button>
-
-</div>
 ```
 ```html
+<!-- Product 1 -->
 <div class="card">
+<div class="badge">🔥 BEST SELLER</div>
+<div class="fish">🐠</div>
+<h2>Oranda Gold Fish</h2>
+<div class="rating">⭐ 4.9</div>
+<p class="old">₹200</p>
+<p class="price">Contact</p>
+<p class="offer">Available Now</p>
+<button class="whatsapp" onclick="order('Oranda Gold Fish')">
+💬 Message on WhatsApp
+</button>
+</div>
+
+<!-- Product 2 -->
+<div class="card">
+<div class="badge">🔥 HOT</div>
+<div class="fish">🐊</div>
+<h2>Alligator Gar</h2>
+<div class="rating">⭐ 4.8</div>
+<p class="old">₹1700</p>
+<p class="price">₹1500</p>
+<p class="offer">Save ₹200</p>
+<button class="whatsapp" onclick="order('Alligator Gar')">
+💬 Message on WhatsApp
+</button>
+</div>
+
+<!-- Product 3 -->
+<div class="card">
+<div class="badge">🔥 PREMIUM</div>
+<div class="fish">🐟</div>
+<h2>Arowana</h2>
+<div class="rating">⭐ 5.0</div>
+<p class="old">₹2000</p>
+<p class="price">₹1800</p>
+<p class="offer">Best Price</p>
+<button class="whatsapp" onclick="order('Arowana')">
+💬 Message on WhatsApp
+</button>
+</div>
+
+<!-- Product 4 -->
+<div class="card">
+<div class="badge">🔥 POPULAR</div>
+<div class="fish">🐠</div>
+<h2>Flowerhorn</h2>
+<div class="rating">⭐ 4.9</div>
+<p class="old">₹2100</p>
+<p class="price">₹1800</p>
+<p class="offer">Limited Stock</p>
+<button class="whatsapp" onclick="order('Flowerhorn')">
+💬 Message on WhatsApp
+</button>
+</div>
+
+<!-- Product 5 -->
+<div class="card">
+<div class="badge">🐠</div>
+<div class="fish">🐟</div>
+<h2>Mollies</h2>
+<div class="rating">⭐ 4.7</div>
+<p class="old">₹60</p>
+<p class="price">₹40</p>
+<p class="offer">Budget Choice</p>
+<button class="whatsapp" onclick="order('Mollies')">
+💬 Message on WhatsApp
+</button>
+</div>
+
+<!-- Product 6 -->
+<div class="card">
+<div class="badge">🐠</div>
+<div class="fish">🐟</div>
+<h2>Guppies</h2>
+<div class="rating">⭐ 4.8</div>
+<p class="old">₹80</p>
+<p class="price">₹60</p>
+<p class="offer">Popular</p>
+<button class="whatsapp" onclick="order('Guppies')">
+💬 Message on WhatsApp
+</button>
+</div>
+
+<!-- Product 7 -->
+<div class="card">
+<div class="badge">⭐ PREMIUM</div>
 <div class="fish">🐠</div>
 <h2>Betta</h2>
+<div class="rating">⭐ 4.9</div>
+<p class="old">₹220</p>
 <p class="price">₹180</p>
-<button class="whatsapp" onclick="order('Betta')">💬 Message</button>
+<p class="offer">Top Rated</p>
+<button class="whatsapp" onclick="order('Betta')">
+💬 Message on WhatsApp
+</button>
 </div>
 
+<!-- Product 8 -->
 <div class="card">
-<div class="fish">🐠</div>
+<div class="badge">🐠</div>
+<div class="fish">🐟</div>
 <h2>Panda Mollies</h2>
+<div class="rating">⭐ 4.7</div>
+<p class="old">₹80</p>
 <p class="price">₹60</p>
-<button class="whatsapp" onclick="order('Panda Mollies')">💬 Message</button>
+<p class="offer">Fresh Stock</p>
+<button class="whatsapp" onclick="order('Panda Mollies')">
+💬 Message on WhatsApp
+</button>
 </div>
 
+<!-- Product 9 -->
 <div class="card">
+<div class="badge">🔥 HOT</div>
 <div class="fish">🐟</div>
 <h2>Copper Oscar</h2>
+<div class="rating">⭐ 4.9</div>
+<p class="old">₹850</p>
 <p class="price">₹700</p>
-<button class="whatsapp" onclick="order('Copper Oscar')">💬 Message</button>
-</div>
-
-<div class="card">
-<div class="fish">🐠</div>
-<h2>Gold Fish</h2>
-<p class="price">₹60</p>
-<button class="whatsapp" onclick="order('Gold Fish')">💬 Message</button>
-</div>
-
-<div class="card">
-<div class="fish">🐟</div>
-<h2>Koi</h2>
-<p class="price">₹350</p>
-<button class="whatsapp" onclick="order('Koi')">💬 Message</button>
-</div>
-
-<div class="card">
-<div class="fish">🐠</div>
-<h2>Cichlids</h2>
-<p class="price">₹300</p>
-<button class="whatsapp" onclick="order('Cichlids')">💬 Message</button>
-</div>
-
-<div class="card">
-<div class="fish">🐠</div>
-<h2>Angel Fish</h2>
-<p class="price">₹180</p>
-<button class="whatsapp" onclick="order('Angel Fish')">💬 Message</button>
-</div>
-
-<div class="card">
-<div class="fish">🦈</div>
-<h2>Sharks</h2>
-<p class="price">₹80</p>
-<button class="whatsapp" onclick="order('Sharks')">💬 Message</button>
-</div>
-
-<div class="card">
-<div class="fish">🐟</div>
-<h2>Channa</h2>
-<p class="price">₹1000</p>
-<button class="whatsapp" onclick="order('Channa')">💬 Message</button>
-</div>
-
-<div class="card">
-<div class="fish">🐠</div>
-<h2>Zebra Fish</h2>
-<p class="price">₹40</p>
-<button class="whatsapp" onclick="order('Zebra Fish')">💬 Message</button>
-</div>
-
-<div class="card">
-<div class="fish">🐟</div>
-<h2>Small Flowerhorn</h2>
-<p class="price">₹600</p>
-<button class="whatsapp" onclick="order('Small Flowerhorn')">💬 Message</button>
-</div>
-
-<div class="card">
-<div class="fish">🐟</div>
-<h2>Small Koi</h2>
-<p class="price">₹180</p>
-<button class="whatsapp" onclick="order('Small Koi')">💬 Message</button>
+<p class="offer">Special Price</p>
+<button class="whatsapp" onclick="order('Copper Oscar')">
+💬 Message on WhatsApp
+</button>
 </div>
 ```
 ```html
+<!-- Product 10 -->
+<div class="card">
+<div class="badge">⭐ POPULAR</div>
+<div class="fish">🐠</div>
+<h2>Gold Fish</h2>
+<div class="rating">⭐ 4.8</div>
+<p class="old">₹80</p>
+<p class="price">₹60</p>
+<p class="offer">Best Value</p>
+<button class="whatsapp" onclick="order('Gold Fish')">💬 Message on WhatsApp</button>
+</div>
+
+<!-- Product 11 -->
+<div class="card">
+<div class="badge">🔥 HOT</div>
+<div class="fish">🐟</div>
+<h2>Koi</h2>
+<div class="rating">⭐ 4.9</div>
+<p class="old">₹450</p>
+<p class="price">₹350</p>
+<p class="offer">Save ₹100</p>
+<button class="whatsapp" onclick="order('Koi')">💬 Message on WhatsApp</button>
+</div>
+
+<!-- Product 12 -->
+<div class="card">
+<div class="badge">🐠</div>
+<div class="fish">🐟</div>
+<h2>Cichlids</h2>
+<div class="rating">⭐ 4.7</div>
+<p class="old">₹350</p>
+<p class="price">₹300</p>
+<p class="offer">Popular</p>
+<button class="whatsapp" onclick="order('Cichlids')">💬 Message on WhatsApp</button>
+</div>
+
+<!-- Product 13 -->
+<div class="card">
+<div class="badge">⭐ PREMIUM</div>
+<div class="fish">🐠</div>
+<h2>Angel Fish</h2>
+<div class="rating">⭐ 4.8</div>
+<p class="old">₹220</p>
+<p class="price">₹180</p>
+<p class="offer">Top Rated</p>
+<button class="whatsapp" onclick="order('Angel Fish')">💬 Message on WhatsApp</button>
+</div>
+
+<!-- Product 14 -->
+<div class="card">
+<div class="badge">🐟</div>
+<div class="fish">🦈</div>
+<h2>Sharks</h2>
+<div class="rating">⭐ 4.6</div>
+<p class="old">₹100</p>
+<p class="price">₹80</p>
+<p class="offer">Budget Choice</p>
+<button class="whatsapp" onclick="order('Sharks')">💬 Message on WhatsApp</button>
+</div>
+
+<!-- Product 15 -->
+<div class="card">
+<div class="badge">🔥 PREMIUM</div>
+<div class="fish">🐟</div>
+<h2>Channa</h2>
+<div class="rating">⭐ 5.0</div>
+<p class="old">₹1200</p>
+<p class="price">₹1000</p>
+<p class="offer">Limited Stock</p>
+<button class="whatsapp" onclick="order('Channa')">💬 Message on WhatsApp</button>
+</div>
+
+<!-- Product 16 -->
+<div class="card">
+<div class="badge">🐠</div>
+<div class="fish">🐟</div>
+<h2>Zebra Fish</h2>
+<div class="rating">⭐ 4.7</div>
+<p class="old">₹50</p>
+<p class="price">₹40</p>
+<p class="offer">Fresh Stock</p>
+<button class="whatsapp" onclick="order('Zebra Fish')">💬 Message on WhatsApp</button>
+</div>
+
+<!-- Product 17 -->
+<div class="card">
+<div class="badge">🔥 HOT</div>
+<div class="fish">🐠</div>
+<h2>Small Flowerhorn</h2>
+<div class="rating">⭐ 4.9</div>
+<p class="old">₹700</p>
+<p class="price">₹600</p>
+<p class="offer">Save ₹100</p>
+<button class="whatsapp" onclick="order('Small Flowerhorn')">💬 Message on WhatsApp</button>
+</div>
+
+<!-- Product 18 -->
+<div class="card">
+<div class="badge">🐟</div>
+<div class="fish">🐠</div>
+<h2>Small Koi</h2>
+<div class="rating">⭐ 4.8</div>
+<p class="old">₹220</p>
+<p class="price">₹180</p>
+<p class="offer">Best Price</p>
+<button class="whatsapp" onclick="order('Small Koi')">💬 Message on WhatsApp</button>
+</div>
+
 </div>
 
 <footer>
-
 <h2>🐠 KK AQUARIUM FISH</h2>
 
-<p>
-📍 Markendya Colony,<br>
+<p><b>📍 Address</b><br>
+Markendya Colony,<br>
 Opposite Subham Hotel,<br>
 Godavarikhani, Telangana
 </p>
 
-<h3>📞 Contact Us</h3>
+<br>
 
-<p>7036010302</p>
-<p>7075519854</p>
-
-<p class="ship">
-🚚 Only Telangana Shipping
+<p><b>📞 Contact</b><br>
+7036010302<br>
+7075519854
 </p>
+
+<br>
+
+<p>🚚 <b>Only Telangana Shipping</b></p>
 
 </footer>
 
-<script src="script.js"></script>
+<script>
+function order(fish){
+const phone="917036010302";
+const msg="Hello KK AQUARIUM FISH,%0A%0AI want to order: "+fish+"%0A%0APlease send me details.";
+window.open("https://wa.me/"+phone+"?text="+msg,"_blank");
+}
+
+function searchFish(){
+let input=document.getElementById("search").value.toUpperCase();
+let cards=document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+let name=card.querySelector("h2").innerText.toUpperCase();
+
+if(name.indexOf(input)>-1){
+card.style.display="block";
+}else{
+card.style.display="none";
+}
+});
+}
+</script>
 
 </body>
 </html>

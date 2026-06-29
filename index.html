@@ -458,3 +458,82 @@ card.style.display="none";
 </body>
 </html>
 ```
+```html
+</div>
+
+<footer>
+
+<h2>🐠 KK AQUARIUM FISH</h2>
+
+<p>
+📍 Markendya Colony,<br>
+Opposite Subham Hotel,<br>
+Godavarikhani, Telangana
+</p>
+
+<br>
+
+<p>
+📞 <b>Call / WhatsApp</b><br>
+7036010302<br>
+7075519854
+</p>
+
+<br>
+
+<p style="color:#00ff99;font-weight:bold;">
+🚚 Only Telangana Shipping
+</p>
+
+</footer>
+
+<script>
+function order(fish){
+    const phone="917036010302";
+
+    const message=
+`Hello KK AQUARIUM FISH!
+
+I want to order:
+
+🐟 ${fish}
+
+Please send me price and availability.
+
+Thank you.`;
+
+    window.open(
+        "https://wa.me/"+phone+"?text="+encodeURIComponent(message),
+        "_blank"
+    );
+}
+
+function searchFish(){
+
+    let input=document.getElementById("search").value.toUpperCase();
+
+    let cards=document.querySelectorAll(".card");
+
+    cards.forEach(function(card){
+
+        let fish=card.querySelector("h2").textContent.toUpperCase();
+
+        if(fish.indexOf(input)>-1){
+
+            card.style.display="block";
+
+        }else{
+
+            card.style.display="none";
+
+        }
+
+    });
+
+}
+</script>
+
+</body>
+
+</html>
+```
